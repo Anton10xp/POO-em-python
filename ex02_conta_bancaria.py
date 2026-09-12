@@ -26,4 +26,4 @@ class ContaBancaria:
 c1 = ContaBancaria(1122, "Antonio", 30000)
 print(c1)          # mostra os dados da conta
 c1.saque(1000)      # tenta sacar 1000
-print(c1)           # mostra os dados atualizados da conta
+print(c1)           # mostra os dados atualizados da Conta
