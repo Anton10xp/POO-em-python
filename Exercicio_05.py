@@ -40,4 +40,4 @@ class Funcionario(ABC):
 
     @abstractmethod
     def salario_final(self):
-        pass
+            pass
