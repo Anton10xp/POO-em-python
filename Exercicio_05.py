@@ -61,7 +61,7 @@ class Gerente(Funcionario):
 
 class Vendedor(Funcionario):
     def __init__(self, nome, salario_base, comisao, quantidade):
-        super().__init__(nome, salario_base)                                
+        super().__init__(nome, salario_base)                             
 
         if comisao < 0:
             raise ValueError("A comissao nao pode ser negatriva")
@@ -70,27 +70,30 @@ class Vendedor(Funcionario):
 
             self.__comisao = comisao
 
-        @property
-        def comisao(self):
-            return self.__comisao
-
-
         if type(quantidade) is not int:
             raise TypeError("A quantidade deve ser um numero inteiro")
-        
-        self.__quantidade = quantidade
 
         if quantidade < 0:
             raise ValueError("O quantidade nao poder ser negativa")
 
         self.__quantidade = quantidade
 
-        @property
-        def quantidade(self):
-            return self.__quantidade
+    @property
+    def comisao(self):
+        return self.__comisao
+
+    @property
+    def quantidade(self):
+        return self.__quantidade
 
         
     def salario_final(self):
         return self.salario_base + self.comisao * self.quantidade
 
-    
+    def __str__(self):
+        return f'Nome: {self.nome} Salario final: {self.salario_final()} '
+
+
+v1 = Vendedor("Antonio", 1000, 10, 20)
+
+print(v1)
